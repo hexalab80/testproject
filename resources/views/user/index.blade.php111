@@ -1,0 +1,78 @@
+@extends('layouts.app')
+
+@section('content')
+<style type="text/css">
+  .select-dropdown {
+    display: none !important;
+}
+</style>
+  <div class="container">
+    @if(Session::has('success'))
+    <div class="card-panel teal lighten-2 white-text">
+      {{Session::get('success')}}
+      <a onclick="$(this).parent().hide();" class="waves-effect waves-light btn right red lighten-2">&times;</a>
+    </div>
+    @elseif(Session::has('error'))
+    <div class="card-panel red lighten-2 white-text">
+      {{Session::get('error')}}
+      <a onclick="$(this).parent().hide();" class="waves-effect waves-light btn right teal lighten-2">&times;</a>
+    </div>
+    @endif
+
+    <div class="row section">
+      <div class="col s12">
+        <div class="col s6">
+          <h5>User List</h5>
+        </div>
+        <div class="col s6">
+          <a href="{{url('users/download')}}" class="waves-effect waves-light btn teal right"><i class="material-icons left">file_download</i> Download</a>
+      </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+
+        <div class="container">
+        @foreach ($users as $user)
+        {{ $user->name }} ==<br>
+        @endforeach
+        </div>
+
+        {{ $users->links() }}
+
+
+      </div>
+    </div>
+  </div>
+  <!-- user modal-->
+  <div class="modal" id="usermodel">
+        <div class="modal-content">
+          <p id="status_mod"></p>
+          <form action="" method="post">
+            {{csrf_field()}} {{method_field('PUT')}}
+            <input type="hidden" name="status" id="status_v">
+            <button type="submit" class="waves-effect waves-green btn-flat" style="background-color: green;">Yes</button>
+            <button type="button" class="modal-action modal-close waves-effect waves-red btn-flat" style="background-color: red;">No</button>
+          </form>
+        </div>
+      </div>
+  <script type="text/javascript">
+    
+    function userPopup(id, url,status){
+      $('#status_v').val(status);
+      if(status==2){
+        $('#status_mod').html('Are you sure want to block?');
+      }else{
+        $('#status_mod').html('Are you sure want to unblock?');
+      }
+     $('#usermodel').modal('open');
+     $('#usermodel form').attr('action', url); 
+    }
+
+
+    $(document).ready(function(){
+
+    });
+  </script>
+@endsection

@@ -1,0 +1,12 @@
+[2019-11-11 09:07:51] local.INFO: Queries:==  
+[2019-11-11 09:07:51] local.INFO: select * from `users` where `email` = ? limit 1  
+[2019-11-11 09:07:51] local.INFO: 0.72  
+[2019-11-11 09:07:51] local.INFO: array (
+  0 => 'admin@walknearn.com',
+)  
+[2019-11-11 09:07:51] local.INFO: Queries:==  
+[2019-11-11 09:07:51] local.INFO: select * from `users` where `id` = ? limit 1  
+[2019-11-11 09:07:51] local.INFO: 0.59  
+[2019-11-11 09:07:51] local.INFO: array (
+  0 => 14,
+)  

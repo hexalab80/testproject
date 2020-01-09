@@ -1,0 +1,54 @@
+[2019-11-09 16:19:54] local.INFO: Queries:==  
+[2019-11-09 16:19:54] local.INFO: select * from `roles` where `role` = ? limit 1  
+[2019-11-09 16:19:54] local.INFO: 0.58  
+[2019-11-09 16:19:54] local.INFO: array (
+  0 => 'Admin',
+)  
+[2019-11-09 16:19:54] local.INFO: Queries:==  
+[2019-11-09 16:19:54] local.INFO: select * from `users` where `id` = ? limit 1  
+[2019-11-09 16:19:54] local.INFO: 0.67  
+[2019-11-09 16:19:54] local.INFO: array (
+  0 => 14,
+)  
+[2019-11-09 16:19:54] local.INFO: Queries:==  
+[2019-11-09 16:19:54] local.INFO: select `paytm_requests`.* from `paytm_requests` inner join `users` on `paytm_requests`.`user_id` = `users`.`id` where `users`.`status` = ? and `paytm_requests`.`status` = ? and `paytm_requests`.`hold_status` = ? order by `paytm_requests`.`id` desc  
+[2019-11-09 16:19:54] local.INFO: 0.72  
+[2019-11-09 16:19:54] local.INFO: array (
+  0 => '1',
+  1 => '1',
+  2 => '1',
+)  
+[2019-11-09 16:19:54] local.INFO: Queries:==  
+[2019-11-09 16:19:54] local.INFO: select SUM(paytm_requests.amount) as pending_rupee from `paytm_requests` inner join `users` on `paytm_requests`.`user_id` = `users`.`id` where `users`.`status` = ? and `paytm_requests`.`status` = ? order by `paytm_requests`.`id` desc limit 1  
+[2019-11-09 16:19:54] local.INFO: 0.53  
+[2019-11-09 16:19:54] local.INFO: array (
+  0 => '1',
+  1 => '1',
+)  
+[2019-11-09 16:21:55] local.INFO: Queries:==  
+[2019-11-09 16:21:55] local.INFO: select * from `roles` where `role` = ? limit 1  
+[2019-11-09 16:21:55] local.INFO: 0.74  
+[2019-11-09 16:21:55] local.INFO: array (
+  0 => 'Admin',
+)  
+[2019-11-09 16:21:55] local.INFO: Queries:==  
+[2019-11-09 16:21:55] local.INFO: select * from `users` where `id` = ? limit 1  
+[2019-11-09 16:21:55] local.INFO: 0.95  
+[2019-11-09 16:21:55] local.INFO: array (
+  0 => 14,
+)  
+[2019-11-09 16:21:55] local.INFO: Queries:==  
+[2019-11-09 16:21:55] local.INFO: select `paytm_requests`.* from `paytm_requests` inner join `users` on `paytm_requests`.`user_id` = `users`.`id` where `users`.`status` = ? and `paytm_requests`.`status` = ? and `paytm_requests`.`hold_status` = ? order by `paytm_requests`.`id` desc  
+[2019-11-09 16:21:55] local.INFO: 0.68  
+[2019-11-09 16:21:55] local.INFO: array (
+  0 => '1',
+  1 => '1',
+  2 => '1',
+)  
+[2019-11-09 16:21:55] local.INFO: Queries:==  
+[2019-11-09 16:21:55] local.INFO: select SUM(paytm_requests.amount) as pending_rupee from `paytm_requests` inner join `users` on `paytm_requests`.`user_id` = `users`.`id` where `users`.`status` = ? and `paytm_requests`.`status` = ? order by `paytm_requests`.`id` desc limit 1  
+[2019-11-09 16:21:55] local.INFO: 0.76  
+[2019-11-09 16:21:55] local.INFO: array (
+  0 => '1',
+  1 => '1',
+)  
